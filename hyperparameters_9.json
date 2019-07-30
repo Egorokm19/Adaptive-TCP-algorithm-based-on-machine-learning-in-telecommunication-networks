@@ -1,0 +1,48 @@
+{
+    "_comment": "Control experiment.",
+    "HYPERPARAMETERS": {
+        "Actions": {
+            "INCREASE_QUADRATIC": 0,
+            "DECREASE_PERCENT": 1,
+            "INCREASE_ABSOLUTE": 2,
+            "DECREASE_ABSOLUTE": 3,
+            "STAY": 4,
+            "DECREASE_DRAMATIC": 5,
+            "UPDATE_WMAX": 6,
+            "RESET_CONGESTION_AVOIDANCE_TIME": 7
+        },
+        "Rewards": {
+            "DROPPED_PACKET": -400,
+            "RTT_IS_WAY_TOO_BIG": -1000,
+            "DRAMATIC_RTT_INCREASE": -400,
+            "INCREASED_RTT": -200,
+            "MINOR_RTT_INCREASE": -100,
+            "INCREASED_CWND_ABSOLUTE": 10,
+            "INCREASED_CWND_PERCENTAGE": 15,
+            "NO_REWARD": 0
+        },
+        "DRAMATIC_PERCENT_CHANGE": 0.5,
+        "ABSOLUTE_CHANGE": 5,
+        "PERCENT_CHANGE": 0.05,
+        "FEATURES": ["rtt", "dropped_packet"],
+        "RTT_CHANGE_THRESHOLD": 2,
+        "RTT_DRAMATIC_CHANGE_THRESHOLD": 4,
+        "BATCH_SIZE": 30,
+        "REWARD_DECAY": 30,
+        "STATE_WINDOW_SIZE": 10,
+        "EPS_START": 0.9,
+        "EPS_END": 0.05,
+        "EPS_DECAY": 100,
+        "NUM_EPISODES": 600,
+        "TARGET_UPDATE": 15
+    },
+    "lstm_config": {
+        "n_layers": 1,
+        "hidden_dim": 15,
+        "rdropout": 0.5,
+        "input_dim": 2,
+        "output_dim": 8,
+        "bidirectional": true,
+        "num_layers": 2
+    }
+}
